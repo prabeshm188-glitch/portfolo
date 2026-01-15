@@ -1,0 +1,128 @@
+:root {
+    --primary: #0f172a;
+    --accent: #00f2fe;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    background-color: var(--primary);
+    color: white;
+    overflow-x: hidden;
+}
+
+.fancy-font { font-family: 'Pacifico', cursive; color: var(--accent); margin-bottom: 20px; }
+
+/* Mobile View Container */
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.alternate-bg { background: #161b2a; }
+
+/* Profile & Hero */
+.profile-circle {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px var(--accent);
+}
+.profile-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+.name-title { font-size: 2.5rem; letter-spacing: 2px; }
+.role { color: #94a3b8; font-weight: 300; }
+
+/* Centralized Menu Animation */
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+.menu-item {
+    background: var(--glass);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: fadeIn 0.8s ease-in-out;
+}
+.menu-item:hover { background: var(--accent); color: black; transform: scale(1.05); }
+
+/* Hobbies Column */
+.hobbies-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+.hobby-card {
+    background: var(--glass);
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    border-left: 4px solid var(--accent);
+}
+.hobby-card span { font-size: 1.5rem; }
+
+/* Down Arrow Button */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    font-size: 2rem;
+    color: var(--accent);
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Contact Form */
+.mobile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+}
+.mobile-form input, .mobile-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+.btn-send {
+    background: var(--accent);
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
