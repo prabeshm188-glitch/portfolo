@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prabesh | Simple Coder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="Atif_Aslam__Pehli_Dafa_Song__Video____Ileana_D’Cruz___Latest_Hindi_Song_2017___T-Series(256k).mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="app-container">
+        <section id="home" class="section">
+            <div class="hero">
+                <div class="profile-glow">
+                    <div class="profile-circle">
+                        <img src="new.jpg.jpeg" alt="Prabesh">
+                    </div>
+                </div>
+                <h1 class="name-title">Prabesh</h1>
+                <p class="role">A Simple Coder</p>
+                
+                <div class="mobile-menu">
+                    <button class="menu-item" onclick="scrollToSection('about')">About Me</button>
+                    <button class="menu-item" onclick="scrollToSection('hobbies')">My Hobbies</button>
+                    <button class="menu-item" onclick="scrollToSection('contact')">Contact</button>
+                </div>
+            </div>
+            <div class="scroll-down" onclick="scrollToSection('about')">⌄</div>
+        </section>
+
+        <section id="about" class="section alternate-bg">
+            <div class="content">
+                <h2 class="fancy-font">Who am I?</h2>
+                <p>I am an 18-year-old student exploring the world of tech. I believe in simplicity and clean code.</p>
+                <div class="scroll-down" onclick="scrollToSection('hobbies')">⌄</div>
+            </div>
+        </section>
+
+        <section id="hobbies" class="section">
+            <div class="content">
+                <h2 class="fancy-font">My Hobbies</h2>
+                <div class="hobbies-column">
+                    <div class="hobby-card"><span>✈️</span> Traveling</div>
+                    <div class="hobby-card"><span>🍕</span> Eating</div>
+                    <div class="hobby-card"><span>😴</span> Sleeping</div>
+                    <div class="hobby-card"><span>💻</span> Coding</div>
+                </div>
+                <div class="scroll-down" onclick="scrollToSection('contact')">⌄</div>
+            </div>
+        </section>
+
+        <section id="contact" class="section alternate-bg">
+            <div class="content">
+                <h2 class="fancy-font">Get Notified</h2>
+                <form action="https://formspree.io/f/your-id" method="POST" class="mobile-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" rows="4"></textarea>
+                    <button type="submit" class="btn-send">Send Message</button>
+                </form>
+                <p class="footer-text">Made by Prabesh</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            // Music starts on first click/interaction
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(e => console.log("Autoplay blocked, waiting for more interaction."));
+        }
+    </script>
+</body>
+</html>
